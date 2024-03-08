@@ -7,6 +7,7 @@ using System.Buffers.Text;
 public class PostLogin : MonoBehaviour
 {
     [SerializeField] TMP_Text m_SendMessage;
+    [SerializeField] Transition m_Transition;
     private string url = "https://hono-test.kanakanho.workers.dev";
 
 
@@ -17,8 +18,6 @@ public class PostLogin : MonoBehaviour
     MyBase64str base64 = new MyBase64str("UTF-8");
 
     private string defaltMessage = "ëóêM";
-
-    private string returnMessage;
 
     private void Awake()
     {
@@ -66,7 +65,7 @@ public class PostLogin : MonoBehaviour
         yield return request.SendWebRequest();
         if (request.result == UnityWebRequest.Result.Success)
         {
-            m_SendMessage.text = "Basic " + email + ":" + password + "\n" + request.downloadHandler.text;
+            m_Transition.LoginToWatchStudy();
         }
         else
         {

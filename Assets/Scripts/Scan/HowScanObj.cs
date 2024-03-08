@@ -17,6 +17,11 @@ public class HowScanObj : MonoBehaviour
 
     private string url = "https://hono-test.kanakanho.workers.dev";
 
+    private void Start()
+    {
+        ScanLabData();
+    }
+
     public void ScanLabData()
     {
         m_BlinkingCanvas.TrunOnBlinking();
@@ -31,6 +36,8 @@ public class HowScanObj : MonoBehaviour
 
     private IEnumerator GetLabs()
     {
+        yield return new WaitForSeconds(2f);
+
         url = url + "/labs/";
         UnityWebRequest request = UnityWebRequest.Get(url);
         yield return request.SendWebRequest();
