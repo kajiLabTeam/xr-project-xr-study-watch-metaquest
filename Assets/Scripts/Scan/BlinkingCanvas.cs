@@ -54,6 +54,6 @@ public class BlinkingCanvas : MonoBehaviour
 
     public void HideScanMessage()
     {
-        _CanvasGroup.Equals(false);
+        _CanvasGroup.gameObject.SetActive(false);
     }
 }
