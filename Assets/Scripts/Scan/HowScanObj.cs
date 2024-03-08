@@ -17,7 +17,7 @@ public class HowScanObj : MonoBehaviour
 
     private string url = "https://hono-test.kanakanho.workers.dev";
 
-    public void FetchNewData()
+    public void ScanLabData()
     {
         m_BlinkingCanvas.TrunOnBlinking();
         m_TextMeshPro.text = "近くのオブジェクトをスキャンしています";
@@ -59,5 +59,8 @@ public class HowScanObj : MonoBehaviour
             Debug.LogError("Error fetching data: " + request.error);
             m_TextMeshPro.text = request.error;
         }
+
+        yield return new WaitForSeconds(10f);
+        m_BlinkingCanvas.HideScanMessage();
     }
 }

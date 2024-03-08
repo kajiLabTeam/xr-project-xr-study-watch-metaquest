@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Login.unity
     guid: 1560763a46a03694199b466892a4cb79
   - enabled: 1
-    path: Assets/Scenes/ScanObject.unity
+    path: Assets/Scenes/WatchStudy.unity
     guid: 370cc14e561c49c4389c11941972426e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 776373922814eba46a7cfe461025130d, type: 2}
