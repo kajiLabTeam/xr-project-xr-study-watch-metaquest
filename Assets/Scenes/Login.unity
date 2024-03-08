@@ -3308,11 +3308,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966014473934058840, guid: bc4e7344438358f48b462183ca069ce7, type: 3}
       propertyPath: email
-      value: 
+      value: kajilab123@kajilab.co.jp
       objectReference: {fileID: 0}
     - target: {fileID: 6966014473934058840, guid: bc4e7344438358f48b462183ca069ce7, type: 3}
       propertyPath: password
-      value: 
+      value: kajilabp234pa
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

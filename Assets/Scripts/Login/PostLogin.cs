@@ -65,7 +65,7 @@ public class PostLogin : MonoBehaviour
         yield return request.SendWebRequest();
         if (request.result == UnityWebRequest.Result.Success)
         {
-            m_Transition.LoginToWatchStudy();
+            m_Transition.LoginToStudyWatch();
         }
         else
         {

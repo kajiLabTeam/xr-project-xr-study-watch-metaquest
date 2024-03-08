@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
-    public void LoginToWatchStudy()
+    public void LoginToStudyWatch()
     {
-        SceneManager.LoadScene("WatchStudy");
+        SceneManager.LoadScene("StudyWatch");
     }
 }
