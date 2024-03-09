@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1670438398866652685}
   - component: {fileID: 3585270198102639795}
   - component: {fileID: 452663116975720038}
-  - component: {fileID: 5717202582577798605}
   - component: {fileID: 3962524471534658018}
   m_Layer: 5
   m_Name: Canvas
@@ -109,20 +108,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5717202582577798605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872288284538548973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88a561a191b79345ab365f704e455e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labs:
-    objects: []
 --- !u!114 &3962524471534658018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,13 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64ffb062fd06b5499531ac5e9d70fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _labsState: {fileID: 5717202582577798605}
-  _switchButton: {fileID: 5713679154387068271}
+  _labsState: {fileID: 0}
+  _switchButton: {fileID: 641817533313970035}
   _universityName: {fileID: 1789189718428895215}
-  _major: {fileID: 1789189718428895215}
+  _major: {fileID: 3789102942448655526}
   _location: {fileID: 7973440630468366934}
   _labName: {fileID: 1919001915542662670}
   button: 
+  cardNum: 0
 --- !u!1 &995253260088517876
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,9 +848,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bd2f9c1b3af5e648b438f5dde434a79, type: 3}
---- !u!114 &5713679154387068271 stripped
+--- !u!114 &641817533313970035 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7445684785134229630, guid: 6bd2f9c1b3af5e648b438f5dde434a79, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2375441625782719074, guid: 6bd2f9c1b3af5e648b438f5dde434a79, type: 3}
   m_PrefabInstance: {fileID: 2891155069879680273}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

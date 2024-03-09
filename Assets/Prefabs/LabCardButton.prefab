@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5932683381995832944}
-  - component: {fileID: 7445684785134229630}
+  - component: {fileID: 2375441625782719074}
   m_Layer: 0
   m_Name: LabCardButton
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   - {fileID: 100496864019548227}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7445684785134229630
+--- !u!114 &2375441625782719074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
   _walkCanvas: {fileID: 8274714409302372910}
   _visibilityCanvas: {fileID: 5190549326836479209}
   _visibilityOffCanvas: {fileID: 674010954255246368}
-  isSearch: 0
+  isSearch: 1
   isWalk: 0
   isVisibility: 0
   isVisibilityOff: 0

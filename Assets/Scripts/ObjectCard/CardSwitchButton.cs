@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SwitchButton : MonoBehaviour
+public class CardSwitchButton : MonoBehaviour
 {
     [SerializeField] private Canvas _searchCanvas;
     [SerializeField] private Canvas _walkCanvas;

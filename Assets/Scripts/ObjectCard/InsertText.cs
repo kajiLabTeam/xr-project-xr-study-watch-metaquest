@@ -4,7 +4,7 @@ using TMPro;
 public class InsertText : MonoBehaviour
 {
     [SerializeField] public LabsState _labsState;
-    [SerializeField] public SwitchButton _switchButton;
+    [SerializeField] public CardSwitchButton _switchButton;
 
     [SerializeField] public TMP_Text _universityName;
     [SerializeField] public TMP_Text _major;

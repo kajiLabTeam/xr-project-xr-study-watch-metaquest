@@ -6,10 +6,11 @@ using System;
 
 public class HowScanObj : MonoBehaviour
 {
-    [SerializeField] BlinkingCanvas m_BlinkingCanvas;
     [SerializeField] LabsState m_LabsState;
+    [SerializeField] BlinkingCanvas m_BlinkingCanvas;
 
     [SerializeField] TMP_Text m_TextMeshPro;
+
     public int insertNum = 0;
 
     private string beforeText = "周辺に";
@@ -17,16 +18,11 @@ public class HowScanObj : MonoBehaviour
 
     private string url = "https://hono-test.kanakanho.workers.dev";
 
-    private void Start()
-    {
-        ScanLabData();
-    }
-
-    public void ScanLabData()
+    public IEnumerator ScanLabData()
     {
         m_BlinkingCanvas.TrunOnBlinking();
         m_TextMeshPro.text = "近くのオブジェクトをスキャンしています";
-        StartCoroutine(GetLabs());
+        yield return StartCoroutine(GetLabs());
     }
 
     private void MakeRetrunMessage(int dataNum)
@@ -36,7 +32,7 @@ public class HowScanObj : MonoBehaviour
 
     private IEnumerator GetLabs()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         url = url + "/labs/";
         UnityWebRequest request = UnityWebRequest.Get(url);
@@ -67,7 +63,6 @@ public class HowScanObj : MonoBehaviour
             m_TextMeshPro.text = request.error;
         }
 
-        yield return new WaitForSeconds(10f);
-        m_BlinkingCanvas.HideScanMessage();
+        yield return new WaitForSeconds(2f);
     }
 }
