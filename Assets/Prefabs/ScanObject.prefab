@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 452663116975720038}
   - component: {fileID: 8549051099698088091}
   - component: {fileID: 7594868285197470796}
-  - component: {fileID: 5717202582577798605}
   - component: {fileID: 6132874724108347333}
   m_Layer: 5
   m_Name: Canvas
@@ -133,20 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CanvasGroup: {fileID: 8549051099698088091}
   isBlinking: 0
---- !u!114 &5717202582577798605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872288284538548973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88a561a191b79345ab365f704e455e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labs:
-    objects: []
 --- !u!114 &6132874724108347333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BlinkingCanvas: {fileID: 7594868285197470796}
-  m_LabsState: {fileID: 5717202582577798605}
+  m_LabsState: {fileID: 0}
   m_TextMeshPro: {fileID: 1789189718428895215}
   insertNum: 0
 --- !u!1 &1284123800553864577
