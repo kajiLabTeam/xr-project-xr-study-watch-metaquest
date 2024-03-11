@@ -20,6 +20,7 @@ public class LabInfo
 [System.Serializable]
 public class ObjectData
 {
+    public string id; 
     public UniversityInfo university;
     public LabInfo lab;
 }
