@@ -1140,8 +1140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputEmailField: {fileID: 1193468289341100985}
   inputPasswordField: {fileID: 1791586943470176642}
-  m_LoginState: {fileID: 0}
-  m_ValidateLogin: {fileID: 0}
+  m_LoginState: {fileID: 5117150918275227858}
+  m_ValidateLogin: {fileID: 6775667256586957505}
   isPassword: 0
   isEmail: 0
 --- !u!114 &6775667256586957505
@@ -1171,6 +1171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendMessage: {fileID: 3333367156587138745}
+  m_Transition: {fileID: 0}
   m_ValidateLogin: {fileID: 0}
   m_LoginState: {fileID: 0}
   m_UseKeyboard: {fileID: 0}
@@ -1187,7 +1188,7 @@ GameObject:
   - component: {fileID: 571964240392392582}
   - component: {fileID: 5163127289349277052}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Pokeable Item'
+  m_Name: '[BuildingBlock] Pokeable Item Email'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: 9014ffd2-1f88-4f4a-852e-839706bbf92e
+  instanceId: 0908d82f-0cd4-4455-980b-8e905c4b1baa
   version: 1
 --- !u!114 &571964240392392582
 MonoBehaviour:
@@ -2084,7 +2085,7 @@ GameObject:
   - component: {fileID: 8071655635152595205}
   - component: {fileID: 1762783047250077243}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Pokeable Item'
+  m_Name: '[BuildingBlock] Pokeable Item Send'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2120,7 +2121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: e38c10fd-829c-4327-b713-dac852fadcb1
+  instanceId: d321c3e5-87b0-478f-bcf7-c76f338f95a2
   version: 1
 --- !u!114 &8071655635152595205
 MonoBehaviour:
@@ -4336,7 +4337,7 @@ GameObject:
   - component: {fileID: 1487801409945564632}
   - component: {fileID: 7275806763534687823}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Pokeable Item (1)'
+  m_Name: '[BuildingBlock] Pokeable Item Pass'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4372,7 +4373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: 20a88c40-652b-4116-9c49-275e41be5827
+  instanceId: b0272b74-8606-46bf-b5bd-75be53f26187
   version: 1
 --- !u!114 &1487801409945564632
 MonoBehaviour:
