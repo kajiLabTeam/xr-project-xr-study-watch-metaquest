@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _labsState: {fileID: 0}
-  _switchButton: {fileID: 641817533313970035}
+  _switchButton: {fileID: 0}
   _universityName: {fileID: 1789189718428895215}
   _major: {fileID: 3789102942448655526}
   _location: {fileID: 7973440630468366934}
@@ -843,22 +843,12 @@ PrefabInstance:
       propertyPath: isSearch
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2375441625782719074, guid: 6bd2f9c1b3af5e648b438f5dde434a79, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bd2f9c1b3af5e648b438f5dde434a79, type: 3}
---- !u!114 &641817533313970035 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2375441625782719074, guid: 6bd2f9c1b3af5e648b438f5dde434a79, type: 3}
-  m_PrefabInstance: {fileID: 2891155069879680273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a9b3fc4c683884d9b9ba8a6db4cf96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &8811945977318931297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5932683381995832944, guid: 6bd2f9c1b3af5e648b438f5dde434a79, type: 3}

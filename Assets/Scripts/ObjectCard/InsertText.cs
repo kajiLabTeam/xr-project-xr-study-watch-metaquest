@@ -4,21 +4,17 @@ using TMPro;
 public class InsertText : MonoBehaviour
 {
     [SerializeField] public LabsState _labsState;
-    [SerializeField] public CardSwitchButton _switchButton;
 
     [SerializeField] public TMP_Text _universityName;
     [SerializeField] public TMP_Text _major;
     [SerializeField] public TMP_Text _location;
     [SerializeField] public TMP_Text _labName;
 
-    public string button;
-
     public int cardNum;
 
     void Start()
     {
         SetText(cardNum);
-        _switchButton.SetButtonIcon(button);
     }
 
     public void SetText(int n)
