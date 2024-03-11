@@ -62,11 +62,11 @@ public class SetCardItem : MonoBehaviour
 
     private void SetCard()
     {
-        _insertTextOdd.SetText(pageNum * 2);
+        _insertTextOdd.SetText(pageNum * 2,true);
         if (pageNum != pageLastNum || labNum % 2 == 0)
         {
             _objectCardEven.gameObject.SetActive(true);
-            _insertTextEven.SetText(pageNum * 2 + 1);
+            _insertTextEven.SetText(pageNum * 2 + 1,false);
         }
         else
         {

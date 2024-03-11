@@ -11,6 +11,7 @@ public class InitStory : MonoBehaviour
     {
         // オブジェクトのウィンドウは非表示
         _switchPanel.CloseNearList();
+        _switchPanel.CloseSelectObjectCard();
         _pokelistButton.gameObject.SetActive(false);
         // 最初のスキャン
         yield return StartCoroutine(_howScanObj.ScanLabData());
