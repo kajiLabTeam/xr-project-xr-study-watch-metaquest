@@ -54,7 +54,7 @@ public class HowScanObj : MonoBehaviour
                 yield break;
             }
 
-            insertNum = m_LabsState.labs.objects.Length;
+            insertNum = m_LabsState.labs.objects.Count;
             MakeRetrunMessage(insertNum);
         }
         else

@@ -1,6 +1,5 @@
-using System;
 using UnityEngine;
-using TMPro;
+using System.Linq;
 
 public class SelectLab : MonoBehaviour
 {
@@ -11,13 +10,14 @@ public class SelectLab : MonoBehaviour
     public string showOddLabId;
     public string showEvenLabId;
     public string selectLabId;
+    public ObjectData selectLabObjectData;
     public int selectLabIndex;
 
     private void SetLabId(string labId)
     {
         selectLabId = labId;
-        selectLabIndex = Array.FindIndex(_labsState.labs.objects, obj => obj.id == labId);
-
+        selectLabObjectData = _labsState.labs.objects.FirstOrDefault(x => x.id == labId);
+        selectLabIndex = _labsState.labs.objects.IndexOf(selectLabObjectData);
         _selectInsertText.SetText(selectLabIndex);
     }
 

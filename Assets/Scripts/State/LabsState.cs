@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -28,7 +29,7 @@ public class ObjectData
 [System.Serializable]
 public class LabsData
 {
-    public ObjectData[] objects;
+    public List<ObjectData> objects = new List<ObjectData>();
 }
 
 public class LabsState : MonoBehaviour
@@ -38,6 +39,5 @@ public class LabsState : MonoBehaviour
     private void Awake()
     {
         labs = new LabsData();
-        labs.objects = new ObjectData[0];
     }
 }
