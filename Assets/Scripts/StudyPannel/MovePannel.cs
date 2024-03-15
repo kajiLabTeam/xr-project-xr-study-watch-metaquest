@@ -2,7 +2,6 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
 using TMPro;
 
 
@@ -12,7 +11,7 @@ public class MovePannel : MonoBehaviour
     [SerializeField] ArriveLab _arriveLab;
     [SerializeField] GameObject FollowPannel;
     [SerializeField] GameObject _labImage;
-    [SerializeField] RawImage _rawImage;
+    [SerializeField] ChangetextureToMateril _changetextureToMateril;
     [SerializeField] TMP_Text _debug;
 
     private Texture assetImage;
@@ -54,8 +53,7 @@ public class MovePannel : MonoBehaviour
                 assetImage = ((DownloadHandlerTexture)request.downloadHandler).texture;
                 try
                 {
-                    SetImage();
-                    _debug.text += "request:" + request.ToString();
+                    _changetextureToMateril.SetMaterial(assetImage);
                 }
                 catch
                 {
@@ -73,15 +71,5 @@ public class MovePannel : MonoBehaviour
             Debug.LogError("Error fetching data: " + request.error);
             _debug.text += "Error fetching data: " + request.error;
         }
-    }
-
-    private void SetImage()
-    {
-        _rawImage.texture = assetImage;
-    }
-
-    public Texture GetTexture()
-    {
-        return assetImage;
     }
 }
