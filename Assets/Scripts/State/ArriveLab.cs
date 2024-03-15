@@ -11,8 +11,6 @@ public enum ArriveStatus
 
 public class ArriveLab : MonoBehaviour
 {
-    [SerializeField] TMPro.TMP_Text _text;
-
     private class ArriveLabState
     {
         public string id;
@@ -24,7 +22,6 @@ public class ArriveLab : MonoBehaviour
 
     public void SetLabs(List<string> labIds)
     {
-        _text.text = "";
         foreach (string id in labIds)
         {
             if (!HasLab(id))
@@ -35,7 +32,6 @@ public class ArriveLab : MonoBehaviour
                     selected = false,
                     status = ArriveStatus.Searching.ToString()
                 };
-                _text.text += newState.id + newState.selected.ToString() + newState.status.ToString() + "\n";
                 arriveLabStates.Add(newState);
             }
         }
@@ -43,7 +39,6 @@ public class ArriveLab : MonoBehaviour
 
     private bool HasLab(string id)
     {
-        //_text.text += "id:" +id + "then" + arriveLabStates.Any(state => state.id == id).ToString() +"\n";
         return arriveLabStates.Any(state => state.id == id);
     }
 
@@ -58,7 +53,6 @@ public class ArriveLab : MonoBehaviour
 
     public void SetArrived(string id)
     {
-        _text.text += "setArrived" + id +"\n";
         SetStatus(id, ArriveStatus.Arrived);
     }
 
@@ -83,16 +77,13 @@ public class ArriveLab : MonoBehaviour
         state = arriveLabStates.FirstOrDefault(s => s.id == id);
         if (state != null)
         {
-            _text.text += "setSelected" + state.id + "\n";
             state.selected = true;
         }
     }
 
     public string SelectedId()
     {
-        _text.text += "startgetSelectedId" + "\n";
-       ArriveLabState state = GetSelected();
-        _text.text += "setSelected" + state.id + "\n";
+        ArriveLabState state = GetSelected();
         if (state != null) return state.id;
         return null;
     }
