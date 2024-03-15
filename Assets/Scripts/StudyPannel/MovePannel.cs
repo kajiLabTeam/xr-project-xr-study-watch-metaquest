@@ -79,4 +79,9 @@ public class MovePannel : MonoBehaviour
     {
         _rawImage.texture = assetImage;
     }
+
+    public Texture GetTexture()
+    {
+        return assetImage;
+    }
 }
