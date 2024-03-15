@@ -14,6 +14,7 @@ public class UniversityInfo
 public class LabInfo
 {
     public string name;
+    public string image;
     public string location;
     public string roomNum;
 }

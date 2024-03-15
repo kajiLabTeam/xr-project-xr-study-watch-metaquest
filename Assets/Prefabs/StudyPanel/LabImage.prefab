@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 7220814440378835831}
   - component: {fileID: 1445204777263640325}
   - component: {fileID: 5721363489142447687}
-  - component: {fileID: 5112906923518093103}
-  - component: {fileID: 8106949413018643450}
+  - component: {fileID: 2253709013077629113}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -104,7 +103,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5112906923518093103
+--- !u!114 &2253709013077629113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,23 +112,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786037138250812187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b9328a0b76ee648a078706cbcd9366, type: 3}
+  m_Script: {fileID: 11500000, guid: c16691183e4887946b2a942a0afde041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowPannel: {fileID: 0}
---- !u!114 &8106949413018643450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786037138250812187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be069829b05894a4a8178693cbe43ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _getFollowPosition: {fileID: 5112906923518093103}
 --- !u!1 &3933385857812874208
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +142,7 @@ RectTransform:
   m_GameObject: {fileID: 3933385857812874208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7126310674465312316}
@@ -165,7 +150,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_SizeDelta: {x: 16, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3563459959088665214
 CanvasRenderer:
@@ -211,6 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590484976370386320}
+  - component: {fileID: 9089921063541950479}
   m_Layer: 0
   m_Name: LabImage
   m_TagString: Untagged
@@ -234,3 +220,21 @@ Transform:
   - {fileID: 7126310674465312316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9089921063541950479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682790510032684738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be069829b05894a4a8178693cbe43ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _labsState: {fileID: 0}
+  _arriveLab: {fileID: 0}
+  FollowPannel: {fileID: 0}
+  _labImage: {fileID: 8682790510032684738}
+  _rawImage: {fileID: 2097844867798901585}
+  _debug: {fileID: 0}
