@@ -3,10 +3,12 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using System;
+using System.Collections.Generic;
 
 public class HowScanObj : MonoBehaviour
 {
     [SerializeField] LabsState m_LabsState;
+    [SerializeField] ArriveLab _arriveLab;
     [SerializeField] BlinkingCanvas m_BlinkingCanvas;
 
     [SerializeField] TMP_Text m_TextMeshPro;
@@ -54,7 +56,7 @@ public class HowScanObj : MonoBehaviour
                 yield break;
             }
 
-            insertNum = m_LabsState.labs.objects.Length;
+            insertNum = m_LabsState.labs.objects.Count;
             MakeRetrunMessage(insertNum);
         }
         else
@@ -62,6 +64,14 @@ public class HowScanObj : MonoBehaviour
             Debug.LogError("Error fetching data: " + request.error);
             m_TextMeshPro.text = request.error;
         }
+
+        // LabIdÇÃÉäÉXÉgÇçÏê¨
+        List<string> labIds = new List<string>();
+        foreach (ObjectData objectData in m_LabsState.labs.objects)
+        {
+            labIds.Add(objectData.id);
+        }
+        _arriveLab.SetLabs(labIds);
 
         yield return new WaitForSeconds(2f);
     }

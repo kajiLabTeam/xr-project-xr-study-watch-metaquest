@@ -18,7 +18,7 @@ public class SetCardItem : MonoBehaviour
 
     public void SetLabData()
     {
-        labNum = _labsState.labs.objects.Length;
+        labNum = _labsState.labs.objects.Count;
         pageLastNum = labNum / 2;
 
         SetButton();

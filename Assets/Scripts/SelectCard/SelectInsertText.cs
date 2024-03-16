@@ -12,6 +12,7 @@ public class SelectInsertText : MonoBehaviour
 
     public void SetText(int n)
     {
+        if (n < 0) return;
         _universityName.text = _labsState.labs.objects[n].university.name;
         _major.text = _labsState.labs.objects[n].university.undergraduate + _labsState.labs.objects[n].university.department + _labsState.labs.objects[n].university.major;
         _location.text = _labsState.labs.objects[n].lab.location + _labsState.labs.objects[n].lab.roomNum;

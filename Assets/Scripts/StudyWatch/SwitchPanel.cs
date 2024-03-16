@@ -8,6 +8,7 @@ public class SwitchPanel : MonoBehaviour
     [SerializeField] GameObject _openButton;
     [SerializeField] GameObject _closeButton;
     [SerializeField] GameObject _selectObjectCard;
+    [SerializeField] GameObject _labImage;
 
     [SerializeField] SetCardItem _setCardItem;
     [SerializeField] SelectLab _selectLab;
@@ -53,5 +54,14 @@ public class SwitchPanel : MonoBehaviour
     public void CloseSelectObjectCard()
     {
         _selectObjectCard.gameObject.SetActive(false);
+    }
+
+    public void OpenLabImage()
+    {
+        _labImage.gameObject.SetActive(true);
+    }
+    public void CloseLabImage()
+    {
+        _labImage.gameObject.SetActive(false);
     }
 }
