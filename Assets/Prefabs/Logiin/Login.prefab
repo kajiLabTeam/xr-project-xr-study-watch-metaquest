@@ -976,6 +976,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2137574012556541982}
+  - component: {fileID: 3545034120321352260}
+  - component: {fileID: 6228581296283827431}
+  - component: {fileID: 7015787082984426915}
+  - component: {fileID: 1280928225905346356}
   m_Layer: 0
   m_Name: Login
   m_TagString: Untagged
@@ -999,6 +1003,69 @@ Transform:
   - {fileID: 5595128823502270450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3545034120321352260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049617496302423051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a50f48e66cdf1c4a8eb7a9adcbe8258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  email: 
+  password: 
+--- !u!114 &6228581296283827431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049617496302423051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15717118dfeea434fae11bac175f87f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendMessage: {fileID: 3333367156587138745}
+  m_Transition: {fileID: 0}
+  m_ValidateLogin: {fileID: 1280928225905346356}
+  m_LoginState: {fileID: 3545034120321352260}
+  m_UseKeyboard: {fileID: 7015787082984426915}
+--- !u!114 &7015787082984426915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049617496302423051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7feac644e97ddc441a51b9f7bf309ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputEmailField: {fileID: 1193468289341100985}
+  inputPasswordField: {fileID: 1791586943470176642}
+  m_LoginState: {fileID: 3545034120321352260}
+  m_ValidateLogin: {fileID: 1280928225905346356}
+  isPassword: 0
+  isEmail: 0
+--- !u!114 &1280928225905346356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049617496302423051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266c798898539fd4994c3abfae2fa4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  errorMessageEmail: {fileID: 4768916367778584156}
+  errorMessagePassword: {fileID: 5545152418744732737}
 --- !u!1 &3544115615527684733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,10 +1078,6 @@ GameObject:
   - component: {fileID: 383889829043718582}
   - component: {fileID: 2300811501827353262}
   - component: {fileID: 9082399378806179987}
-  - component: {fileID: 5117150918275227858}
-  - component: {fileID: 1238796508202743128}
-  - component: {fileID: 6775667256586957505}
-  - component: {fileID: 7924039466905678686}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1112,69 +1175,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5117150918275227858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3544115615527684733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b50d29fda4bf744a49427b6d864a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  email: 
-  password: 
---- !u!114 &1238796508202743128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3544115615527684733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7811206f4240ec4693983c0340bb55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputEmailField: {fileID: 1193468289341100985}
-  inputPasswordField: {fileID: 1791586943470176642}
-  m_LoginState: {fileID: 5117150918275227858}
-  m_ValidateLogin: {fileID: 6775667256586957505}
-  isPassword: 0
-  isEmail: 0
---- !u!114 &6775667256586957505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3544115615527684733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8633c87004e54a4896420dead7b3fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  errorMessageEmail: {fileID: 4768916367778584156}
-  errorMessagePassword: {fileID: 5545152418744732737}
---- !u!114 &7924039466905678686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3544115615527684733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 658454b50f7205647a2fc834b1b3d8d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendMessage: {fileID: 3333367156587138745}
-  m_Transition: {fileID: 0}
-  m_ValidateLogin: {fileID: 0}
-  m_LoginState: {fileID: 0}
-  m_UseKeyboard: {fileID: 0}
 --- !u!1 &4114908870599987524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: 0908d82f-0cd4-4455-980b-8e905c4b1baa
+  instanceId: 4379153a-75a1-4cde-9f5c-cc5b32a5797d
   version: 1
 --- !u!114 &571964240392392582
 MonoBehaviour:
@@ -1394,7 +1394,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238796508202743128}
+      - m_Target: {fileID: 7015787082984426915}
         m_TargetAssemblyTypeName: UseKeyboard, Assembly-CSharp
         m_MethodName: SetEmailKeyboard
         m_Mode: 1
@@ -2121,7 +2121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: d321c3e5-87b0-478f-bcf7-c76f338f95a2
+  instanceId: 76f84075-c40f-44d1-9735-3a0928e380e8
   version: 1
 --- !u!114 &8071655635152595205
 MonoBehaviour:
@@ -2291,7 +2291,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7924039466905678686}
+      - m_Target: {fileID: 6228581296283827431}
         m_TargetAssemblyTypeName: PostLogin, Assembly-CSharp
         m_MethodName: Login
         m_Mode: 1
@@ -4373,7 +4373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: b0272b74-8606-46bf-b5bd-75be53f26187
+  instanceId: 76f8e02f-ea49-4d01-a225-76e6391335d4
   version: 1
 --- !u!114 &1487801409945564632
 MonoBehaviour:
@@ -4543,7 +4543,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238796508202743128}
+      - m_Target: {fileID: 7015787082984426915}
         m_TargetAssemblyTypeName: UseKeyboard, Assembly-CSharp
         m_MethodName: SetPassKeyboard
         m_Mode: 1
