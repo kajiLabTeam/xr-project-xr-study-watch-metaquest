@@ -15,6 +15,7 @@ public class SelectController : MonoBehaviour
         {
             id = id,
             isSelected = false,
+            isShowed = false,
         });
         return true;
     }
@@ -58,5 +59,39 @@ public class SelectController : MonoBehaviour
         SelectInfo info = _selectState.selectInfos.FirstOrDefault(info => info.isSelected);
         if (info == null) return null;
         return info.id;
+    }
+
+    public bool GetIsShowed(string id)
+    {
+        return _selectState.selectInfos.Any(info => info.id == id && info.isShowed);
+    }
+
+    private bool SetDisableShowed()
+    {
+        SelectInfo info = _selectState.selectInfos.FirstOrDefault(info => info.isShowed == true);
+
+        // info が取得できたか確認
+        if (info == null) return true;
+        int index = _selectState.selectInfos.IndexOf(info);
+
+        // index が取得できたか確認
+        if (index == -1) return false;
+        _selectState.selectInfos[index].isShowed = false;
+        return true;
+    }
+
+    public bool SetIsShowed(string id)
+    {
+        if (!SetDisableShowed()) return false;
+        SelectInfo info = _selectState.selectInfos.FirstOrDefault(info => info.id == id);
+
+        // info が取得できたか確認
+        if (info == null) return false;
+        int index = _selectState.selectInfos.IndexOf(info);
+
+        // index が取得できたか確認
+        if (index == -1) return false;
+        _selectState.selectInfos[index].isShowed = true;
+        return true;
     }
 }

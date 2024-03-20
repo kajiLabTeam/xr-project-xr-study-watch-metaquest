@@ -33,6 +33,8 @@ public class ArriveController : MonoBehaviour
 
     public string GetImageURL(string id)
     {
-        return GetArriveInfo(id).viewUrl;
+        string url = GetArriveInfo(id).viewUrl;
+        if (url == null) return null;
+        return url;
     }
 }

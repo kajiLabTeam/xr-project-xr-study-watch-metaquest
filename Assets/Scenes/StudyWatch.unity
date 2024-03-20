@@ -946,7 +946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &117744094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6828,7 +6828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1009369218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7198,7 +7198,6 @@ MonoBehaviour:
   _changePannelManager: {fileID: 1127126114}
   _changePannelButton: {fileID: 1127126116}
   _scanPanelManager: {fileID: 345709674}
-  _text: {fileID: 889068291}
 --- !u!114 &1127126116
 MonoBehaviour:
   m_ObjectHideFlags: 0

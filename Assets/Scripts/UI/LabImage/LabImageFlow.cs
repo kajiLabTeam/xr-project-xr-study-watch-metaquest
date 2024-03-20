@@ -1,7 +1,7 @@
-using System;
+using OVR.OpenVR;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class LabImageFlow : MonoBehaviour
 {
@@ -14,37 +14,45 @@ public class LabImageFlow : MonoBehaviour
     [SerializeField] LabImageInsertTexture _labImageInsertTexture;
     [SerializeField] LabImagePannel _labImagePannel;
 
-    private List<string> arriveIds;
-    private string selectId;
-    private string imageURL;
-    private Texture texture;
-    private Vector3 position;
+    public Texture texture = null;
 
-    public IEnumerator WakeLabImageFlow()
+    public IEnumerator WakeLabImageFlow(TMPro.TMP_Text _text)
     {
-        // たどり着いたオブジェクトの取得
-        arriveIds = _arriveController.GetArriveIds();
         // 選択したオブジェクトの取得
-        selectId = _selectController.GetSelectedId();
-
-        // 一致していない場合は表示しない
-        if (!arriveIds.Contains(selectId))
-        {
-            yield break;
-        }
+        string selectId = _selectController.GetSelectedId();
 
         // 画像URLの取得
-        imageURL=  _arriveController.GetImageURL(selectId);
+        string imageURL =  _arriveController.GetImageURL(selectId);
         // 画像の取得
-        var GetTextureContinue = _httpClient.GetTexture(imageURL);
-        yield return StartCoroutine(GetTextureContinue);
-        texture = (Texture)GetTextureContinue.Current;
-        // アスペクト比の取得
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageURL);
+        yield return request.SendWebRequest();
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            try
+            {
+                texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+                // マテリアルに適応
+                _labImageInsertTexture.SetMaterial(texture);
+                _text.text += texture.name + "\n";
+                if (texture != null)
+                {
+                    _selectController.SetIsShowed(selectId);
+                    _text.text += "request sucseccs\n";
+                }
+            }
+            catch
+            {
+                Debug.LogError("request:" + request.ToString() + "\n");
+            }
+        }
+        else
+        {
+            Debug.LogError("Error fetching data: " + request.error);
+            _text.text = "Error fetching data: " + request.error + "\n";
+        }
 
-        // マテリアルに適応
-        _labImageInsertTexture.SetMaterial(texture);
         // フォローした座標情報の取得
-        position = _getFollowPannelPosition.GetPosition();
+        Vector3 position = _getFollowPannelPosition.GetPosition();
         // 画像の配置転換
         _labImagePannel.SetLabImagePosition(position);
         // 画像をアクティブに

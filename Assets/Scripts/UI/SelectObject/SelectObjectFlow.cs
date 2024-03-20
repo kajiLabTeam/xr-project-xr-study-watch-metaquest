@@ -9,20 +9,13 @@ public class SelectObjectFlow : MonoBehaviour
 
     private string selectedId = null;
 
-    public void WakeSelectObjectFlow(TMPro.TMP_Text _text)
+    public bool WakeSelectObjectFlow()
     {
-        //// 選択中のオブジェクトを取得 & 比較
-        //if (!_selectController.GetIsSelected(selectedId))
-        //{
-        //    return;
-        //}
-
-        _text.text += "get id\n";
         // id に基づく情報の取得
         selectedId = _selectController.GetSelectedId();
-        _text.text += "id" + selectedId + "\n";
-        _text.text += "insert data\n";
+        if (selectedId == null) return false;
         // 情報の挿入
         _selectObjectInsertCanvas.InsertText(selectedId, _labController);
+        return true;
     }
 }

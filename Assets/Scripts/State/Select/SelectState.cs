@@ -6,6 +6,7 @@ public class SelectInfo
 {
     public string id;
     public bool isSelected;
+    public bool isShowed;
 }
 
 public class SelectState : MonoBehaviour

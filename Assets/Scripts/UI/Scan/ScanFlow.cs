@@ -19,7 +19,7 @@ public class ScanFlow : MonoBehaviour
         // ウィンドウの表示
         _scanPanelManager.EnablePannel();
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(4);
 
         // ウィンドウの終了
         _scanPanelManager.DisablePannel();
