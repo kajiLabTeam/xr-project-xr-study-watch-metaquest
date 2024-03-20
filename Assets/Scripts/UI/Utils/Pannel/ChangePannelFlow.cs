@@ -28,7 +28,7 @@ public class ChangePannelFlow : MonoBehaviour
         // 表示内容をセット
         if (!_selectObjectFlow.WakeSelectObjectFlow())
         {
-            // 開いているウィンドウを閉じる
+            // 選択しているオブジェクトがない場合は全てのウィンドウを閉じる
             _scanPanelManager.DisablePannel();
             _changePannelManager.DisableSelectObject();
             _changePannelManager.DisableNearObject();

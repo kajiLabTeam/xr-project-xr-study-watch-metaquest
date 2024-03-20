@@ -12,9 +12,6 @@ public class ObjectListFlow : MonoBehaviour
     [SerializeField] GameObject _objectCardEven;
     [SerializeField] ObjectListInsertCanvas _insertTextEven;
 
-    [SerializeField] TMPro.TMP_Text _textOdd;
-    [SerializeField] TMPro.TMP_Text _textEven;
-
     public List<string> ids;
 
     public int labNum = 0;
@@ -23,10 +20,12 @@ public class ObjectListFlow : MonoBehaviour
 
     public void PageCountUp()
     {
+        // 表示範囲外の場合無視する
         if (pageNum > pageLastNum) return;
+
+        // ページを前に戻す
         pageNum--;
-        _textOdd.text += "pageNum" + pageNum.ToString() + "\n";
-        _textEven.text += "pageLastNum" + pageLastNum.ToString() + "\n";
+        // 表示をセット
         _objectListButton.SetUpButton(pageNum);
         _objectListButton.SetDownButton(pageNum, pageLastNum);
         SetCard();
@@ -34,10 +33,12 @@ public class ObjectListFlow : MonoBehaviour
 
     public void PageCountDown()
     {
+        // 表示範囲外の場合無視する
         if (pageNum < 0) return;
+        // ページを前に戻す
         pageNum++;
-        _textOdd.text += "pageNum" + pageNum.ToString() + "\n";
-        _textEven.text += "pageLastNum" + pageLastNum.ToString() + "\n";
+
+        // 表示をセット
         _objectListButton.SetUpButton(pageNum);
         _objectListButton.SetDownButton(pageNum, pageLastNum);
         SetCard();
@@ -45,23 +46,35 @@ public class ObjectListFlow : MonoBehaviour
 
     private void SetCard()
     {
+        // 奇数（上のカードの場合）
+        // テキストをセット
         _insertTextOdd.InsertText(
             ids[pageNum * 2],
             _labController
             ) ;
+        // 表示中の id を渡す
         _selectManager.SetOddId(ids[pageNum * 2]);
+        
+        // 偶数（下のカードの場合）
+        // データが無い場合は表示しない
         if (pageNum != pageLastNum && labNum % 2 != 0)
         {
+            // カードを表示
             _objectCardEven.gameObject.SetActive(true);
+            // テキストをセット
             _insertTextEven.InsertText(
                 ids[pageNum * 2 + 1],
                 _labController
             );
+            // 表示中の id を渡す
             _selectManager.SetEvenId(ids[pageNum * 2 + 1]);
         }
         else
         {
+            // 表示をやめる
             _objectCardEven.gameObject.SetActive(false);
+            // id を初期化
+            _selectManager.SetEvenId("");
         }
     }
 
@@ -73,17 +86,13 @@ public class ObjectListFlow : MonoBehaviour
             // id を全て取得
             ids = _labController.GetLabIds();
             labNum = _labController.GetLength();
+            pageNum = 0;
             pageLastNum = labNum / 2;
         }
-        pageNum = 0;
-        _textOdd.text += "pageNum" + pageNum.ToString() + "\n";
-        _textEven.text += "pageLastNum" + pageLastNum.ToString() + "\n";
 
         // 表示内容を決定
         _objectListButton.SetUpButton(pageNum);
         _objectListButton.SetDownButton(pageNum, pageLastNum);
         SetCard();
-
-
     }
 }

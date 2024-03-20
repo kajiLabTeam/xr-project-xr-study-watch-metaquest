@@ -1,4 +1,3 @@
-using OVR.OpenVR;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -16,7 +15,7 @@ public class LabImageFlow : MonoBehaviour
 
     public Texture texture = null;
 
-    public IEnumerator WakeLabImageFlow(TMPro.TMP_Text _text)
+    public IEnumerator WakeLabImageFlow()
     {
         // 選択したオブジェクトの取得
         string selectId = _selectController.GetSelectedId();
@@ -30,14 +29,13 @@ public class LabImageFlow : MonoBehaviour
         {
             try
             {
+                // テクスチャを取得
                 texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
                 // マテリアルに適応
                 _labImageInsertTexture.SetMaterial(texture);
-                _text.text += texture.name + "\n";
                 if (texture != null)
                 {
                     _selectController.SetIsShowed(selectId);
-                    _text.text += "request sucseccs\n";
                 }
             }
             catch
@@ -48,7 +46,6 @@ public class LabImageFlow : MonoBehaviour
         else
         {
             Debug.LogError("Error fetching data: " + request.error);
-            _text.text = "Error fetching data: " + request.error + "\n";
         }
 
         // フォローした座標情報の取得
