@@ -7350,11 +7350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3545034120321352260, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: email
-      value: kaaakmi12345@email.com
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3545034120321352260, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: password
-      value: koneejjr234tt6j
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: m_Transition
