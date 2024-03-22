@@ -5,11 +5,12 @@ using UnityEngine.Networking;
 
 public class HttpClient : MonoBehaviour
 {
+    [SerializeField] EnvController _envController;
+
     public IEnumerator GetLabs()
     {
         ResponseData newResponseData = null;
-
-        string url = "https://hono-test.kanakanho.workers.dev/labs/";
+        string url = _envController.GetUrl();
 
         UnityWebRequest request = UnityWebRequest.Get(url);
         yield return request.SendWebRequest();
