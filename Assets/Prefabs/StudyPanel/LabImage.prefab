@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6630483856914326919}
   - component: {fileID: 2779400200470966228}
   - component: {fileID: 8133902938390641255}
-  - component: {fileID: 7024590385479292693}
+  - component: {fileID: 8135637056323382948}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16691183e4887946b2a942a0afde041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7024590385479292693
+--- !u!114 &8135637056323382948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 324255905077503401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88156d15a84514e48b5f041067fc4598, type: 3}
+  m_Script: {fileID: 11500000, guid: a1d4ac09301aa4a4ab9bf43a0d8317fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8682790510032684738
@@ -203,7 +203,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590484976370386320}
-  - component: {fileID: 9089921063541950479}
+  - component: {fileID: 64241168333349478}
+  - component: {fileID: 2816691310587186136}
   m_Layer: 0
   m_Name: LabImage
   m_TagString: Untagged
@@ -228,7 +229,7 @@ Transform:
   - {fileID: 2749958116723365596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9089921063541950479
+--- !u!114 &64241168333349478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,15 +238,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 8682790510032684738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be069829b05894a4a8178693cbe43ef4, type: 3}
+  m_Script: {fileID: 11500000, guid: beefa986d20da0b42aaaf7e81e397a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _labsState: {fileID: 0}
-  _arriveLab: {fileID: 0}
-  FollowPannel: {fileID: 0}
-  _labImage: {fileID: 8682790510032684738}
-  _changetextureToMateril: {fileID: 7024590385479292693}
-  _debug: {fileID: 0}
+  _selectController: {fileID: 0}
+  _arriveController: {fileID: 0}
+  _httpClient: {fileID: 0}
+  _getFollowPannelPosition: {fileID: 0}
+  _labImageInsertTexture: {fileID: 8135637056323382948}
+  _labImagePannel: {fileID: 2816691310587186136}
+--- !u!114 &2816691310587186136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682790510032684738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e66a49d6da0fe4daab459bf3604e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labimage: {fileID: 8682790510032684738}
 --- !u!1001 &771505425380084893
 PrefabInstance:
   m_ObjectHideFlags: 0

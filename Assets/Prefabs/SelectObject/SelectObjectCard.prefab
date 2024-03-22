@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3585270198102639795}
   - component: {fileID: 452663116975720038}
   - component: {fileID: 603607068536228950}
-  - component: {fileID: 8046167895529387367}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -121,23 +120,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &8046167895529387367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872288284538548973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94943930602e8564ca3bca834f0b6589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labsState: {fileID: 0}
-  _universityName: {fileID: 1789189718428895215}
-  _major: {fileID: 3789102942448655526}
-  _location: {fileID: 7973440630468366934}
-  _labName: {fileID: 1919001915542662670}
 --- !u!1 &995253260088517876
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +338,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1047818804480147305}
+  - component: {fileID: 7724724565247864197}
+  - component: {fileID: 7173000423072695461}
   m_Layer: 0
   m_Name: SelectObjectCard
   m_TagString: Untagged
@@ -379,6 +363,37 @@ Transform:
   - {fileID: 2364606566201758880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7724724565247864197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362233212944656032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7af80048aa5964180f91b071b30fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _labController: {fileID: 0}
+  _selectController: {fileID: 0}
+  _selectObjectInsertCanvas: {fileID: 7173000423072695461}
+--- !u!114 &7173000423072695461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362233212944656032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c321665f377da5d4dbbfa57d5b4ffc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _universityName: {fileID: 1789189718428895215}
+  _major: {fileID: 3789102942448655526}
+  _location: {fileID: 7973440630468366934}
+  _labName: {fileID: 1919001915542662670}
 --- !u!1 &5946178167771973274
 GameObject:
   m_ObjectHideFlags: 0

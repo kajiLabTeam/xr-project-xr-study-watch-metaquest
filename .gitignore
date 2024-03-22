@@ -71,3 +71,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# env
+/[Aa]ssets/[Ss]cripts/[Ee]nv/[Ee]nv.cs
