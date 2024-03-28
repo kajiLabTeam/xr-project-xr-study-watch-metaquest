@@ -23,9 +23,4 @@ public class LabImagePannel : MonoBehaviour
     {
         labimage.SetActive(false);
     }
-
-    public void SetImageSize(Vector3 vector3)
-    {
-        labimage.transform.localScale = vector3;
-    }
 }
