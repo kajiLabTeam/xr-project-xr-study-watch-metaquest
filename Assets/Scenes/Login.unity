@@ -6512,7 +6512,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _env: {fileID: 1543293040}
-  _Text: {fileID: 267434957}
   envInfo:
     email: 
     password: 
@@ -7058,6 +7057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693235739}
   - component: {fileID: 1693235740}
+  - component: {fileID: 1693235741}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -7090,6 +7090,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24f425e291a5eb14480fa3b5b72b5104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1693235741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693235737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2c4db786bc8334880d402300943b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1706310953
@@ -7674,9 +7686,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1543293037}
     - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: m_GlobalData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: m_Transition
       value: 
       objectReference: {fileID: 1693235740}
+    - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: m_DataManager
+      value: 
+      objectReference: {fileID: 1693235741}
     - target: {fileID: 7924039466905678686, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: m_LoginState
       value: 

@@ -18,12 +18,12 @@ public enum EnvType
 public class EnvState : MonoBehaviour
 {
     [SerializeField] Env _env;
-    [SerializeField] TMPro.TMP_Text _Text;
 
     public EnvInfo envInfo;
+    private EnvType envType = EnvType.test;
 
     private void Awake()
     {
-        envInfo = _env.GetEnvInfo();
+        envInfo = _env.GetEnvInfo(envType);
     }
 }
