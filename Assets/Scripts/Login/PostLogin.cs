@@ -7,6 +7,8 @@ public class PostLogin : MonoBehaviour
 {
     [SerializeField] TMP_Text m_SendMessage;
     [SerializeField] Transition m_Transition;
+    [SerializeField] DataManager m_DataManager;
+
     private string url = "https://hono-test.kanakanho.workers.dev";
 
 
@@ -20,6 +22,10 @@ public class PostLogin : MonoBehaviour
 
     private void Awake()
     {
+        if (m_DataManager.LoadHeader() != null)
+        {
+            m_Transition.LoginToStudyWatch();
+        }
         m_ValidateLogin = FindObjectOfType<ValidateLogin>();
         m_LoginState = FindObjectOfType<LoginState>();
         m_UseKeyboard = FindObjectOfType<UseKeyboard>();
@@ -64,6 +70,7 @@ public class PostLogin : MonoBehaviour
         yield return request.SendWebRequest();
         if (request.result == UnityWebRequest.Result.Success)
         {
+            m_DataManager.SaveHeader(headerAuth);
             m_Transition.LoginToStudyWatch();
         }
         else

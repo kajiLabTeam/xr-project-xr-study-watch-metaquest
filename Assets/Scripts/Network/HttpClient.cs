@@ -6,13 +6,16 @@ using UnityEngine.Networking;
 public class HttpClient : MonoBehaviour
 {
     [SerializeField] EnvController _envController;
+    [SerializeField] DataManager _dataManager;
 
     public IEnumerator GetLabs()
     {
         ResponseData newResponseData = null;
         string url = _envController.GetUrl();
+        string headerAuth = _dataManager.LoadHeader();
 
         UnityWebRequest request = UnityWebRequest.Get(url);
+        request.SetRequestHeader("authorization", headerAuth);
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
