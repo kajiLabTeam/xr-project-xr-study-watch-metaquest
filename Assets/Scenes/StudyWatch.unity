@@ -2995,6 +2995,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8954672405274570558, guid: 7f58488091c2a954cb18b0e78efc7385, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954672405274570558, guid: 7f58488091c2a954cb18b0e78efc7385, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9089921063541950479, guid: 7f58488091c2a954cb18b0e78efc7385, type: 3}
       propertyPath: _debug
       value: 
@@ -8421,7 +8429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e66b3e1a13b5a4f9838d277706178f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
   _envController: {fileID: 662161516}
   _dataManager: {fileID: 1042923132}
 --- !u!4 &1429064444

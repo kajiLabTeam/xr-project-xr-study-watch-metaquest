@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 4590484976370386320}
   - component: {fileID: 64241168333349478}
   - component: {fileID: 2816691310587186136}
+  - component: {fileID: 8719609778861552216}
   m_Layer: 0
   m_Name: LabImage
   m_TagString: Untagged
@@ -247,6 +248,8 @@ MonoBehaviour:
   _getFollowPannelPosition: {fileID: 0}
   _labImageInsertTexture: {fileID: 8135637056323382948}
   _labImagePannel: {fileID: 2816691310587186136}
+  _imagePannelController: {fileID: 8719609778861552216}
+  texture: {fileID: 0}
 --- !u!114 &2816691310587186136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +263,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   labimage: {fileID: 8682790510032684738}
+--- !u!114 &8719609778861552216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682790510032684738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1771cf76215c73845bba5c0b762507b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LabImageQuad: {fileID: 324255905077503401}
 --- !u!1001 &771505425380084893
 PrefabInstance:
   m_ObjectHideFlags: 0
