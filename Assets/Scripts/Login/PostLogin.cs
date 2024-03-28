@@ -22,6 +22,10 @@ public class PostLogin : MonoBehaviour
 
     private void Awake()
     {
+        if (m_DataManager.LoadHeader() != null)
+        {
+            m_Transition.LoginToStudyWatch();
+        }
         m_ValidateLogin = FindObjectOfType<ValidateLogin>();
         m_LoginState = FindObjectOfType<LoginState>();
         m_UseKeyboard = FindObjectOfType<UseKeyboard>();
