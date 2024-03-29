@@ -16,10 +16,6 @@ public class LabImageFlow : MonoBehaviour
 
     public Texture texture = null;
 
-    private float wieght = 0.7f;
-    private float height = 0.99f;
-    private float depth = 1.0f;
-
     public IEnumerator WakeLabImageFlow()
     {
         // 選択したオブジェクトの取得
@@ -54,7 +50,7 @@ public class LabImageFlow : MonoBehaviour
         }
 
         // サイズを変更
-        Vector3 vector3 = new Vector3(wieght, height, depth);
+        Vector3 vector3 = _arriveController.GetImageAspect(selectId);
         _imagePannelController.SetImageSize(vector3);
 
         // フォローした座標情報の取得
