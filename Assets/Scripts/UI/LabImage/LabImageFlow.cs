@@ -12,6 +12,7 @@ public class LabImageFlow : MonoBehaviour
 
     [SerializeField] LabImageInsertTexture _labImageInsertTexture;
     [SerializeField] LabImagePannel _labImagePannel;
+    [SerializeField] ImagePannelController _imagePannelController;
 
     public Texture texture = null;
 
@@ -47,6 +48,10 @@ public class LabImageFlow : MonoBehaviour
         {
             Debug.LogError("Error fetching data: " + request.error);
         }
+
+        // サイズを変更
+        Vector3 vector3 = _arriveController.GetImageAspect(selectId);
+        _imagePannelController.SetImageSize(vector3);
 
         // フォローした座標情報の取得
         Vector3 position = _getFollowPannelPosition.GetPosition();
