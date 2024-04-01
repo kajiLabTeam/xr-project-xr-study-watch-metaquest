@@ -11,8 +11,6 @@ public class PostLogin : MonoBehaviour
     [SerializeField] Transition m_Transition;
     [SerializeField] DataManager m_DataManager;
 
-    [SerializeField] TMPro.TMP_Text text;
-
     public ValidateLogin m_ValidateLogin;
     public UseKeyboard m_UseKeyboard;
 
@@ -60,14 +58,11 @@ public class PostLogin : MonoBehaviour
     
     private IEnumerator GetDataWithHeader()
     {
-        text.text = "start\n";
         string url = envController.GetUrl();
         url = url + "api/user/login";
-        text.text += url + "\n";
 
         LoginInfo loginInfo = loginStateController.GetLoginInfo();
         string loginInfoStr = JsonUtility.ToJson(loginInfo);
-        text.text += loginInfoStr + "\n";
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(loginInfoStr);
 
         var request = new UnityWebRequest(url, "POST");
@@ -75,19 +70,15 @@ public class PostLogin : MonoBehaviour
         request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
 
-        text.text += "SetRequestHeader" + "\n";
         yield return request.SendWebRequest();
         if (request.result == UnityWebRequest.Result.Success)
         {
-            text.text += "Success\n";
             UserInfo userInfo = JsonUtility.FromJson<UserInfo>(request.downloadHandler.text);
-            text.text += userInfo.id;
             m_DataManager.SaveHeader(userInfo.id);
             m_Transition.LoginToStudyWatch();
         }
         else
         {
-            text.text += request.error;
             m_SendMessage.text = request.error;
         }
     }
