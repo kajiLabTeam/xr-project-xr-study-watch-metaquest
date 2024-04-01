@@ -5,29 +5,26 @@ using TMPro;
 
 public class PostLogin : MonoBehaviour
 {
+    [SerializeField] EnvController envController;
+    [SerializeField] LoginStateController loginStateController;
     [SerializeField] TMP_Text m_SendMessage;
     [SerializeField] Transition m_Transition;
     [SerializeField] DataManager m_DataManager;
 
-    private string url = "https://hono-test.kanakanho.workers.dev";
-
+    [SerializeField] TMPro.TMP_Text text;
 
     public ValidateLogin m_ValidateLogin;
-    public LoginState m_LoginState;
     public UseKeyboard m_UseKeyboard;
 
-    MyBase64str base64 = new MyBase64str("UTF-8");
-
-    private string defaltMessage = "送信";
+    private string defaltMessage = "Send";
 
     private void Awake()
     {
-        if (m_DataManager.LoadHeader() != null)
-        {
-            m_Transition.LoginToStudyWatch();
-        }
+        //if (m_DataManager.LoadHeader() != null)
+        //{
+        //    m_Transition.LoginToStudyWatch();
+        //}
         m_ValidateLogin = FindObjectOfType<ValidateLogin>();
-        m_LoginState = FindObjectOfType<LoginState>();
         m_UseKeyboard = FindObjectOfType<UseKeyboard>();
         m_SendMessage.text = defaltMessage;
     }
@@ -35,46 +32,62 @@ public class PostLogin : MonoBehaviour
 
     public void Login()
     {
-        if (m_LoginState.email == "" && m_LoginState.password == "")
+        string email = loginStateController.GetEmail();
+        string password = loginStateController.GetPassword();
+        if (email == "" && password == "")
         {
             return;
         }
-        m_SendMessage.text = "メールアドレスを検証中";
-        if (!m_ValidateLogin.ValidateEmail(m_LoginState.email))
+        m_SendMessage.text = "ValidateEmail";
+        if (!m_ValidateLogin.ValidateEmail(email))
         {
             m_UseKeyboard.CleanEmail();
             m_SendMessage.text = defaltMessage;
             return;
         }
 
-        m_SendMessage.text = "パスワードを検証中";
-        if (!m_ValidateLogin.ValidatePassword(m_LoginState.password))
+        m_SendMessage.text = "ValidatePassword";
+        if (!m_ValidateLogin.ValidatePassword(password))
         {
             m_UseKeyboard.CleanPassword();
             m_SendMessage.text = defaltMessage;
             return;
         }
 
-        m_SendMessage.text = "送信中";
-        StartCoroutine(GetDataWithHeader(url, m_LoginState.email, m_LoginState.password));
+        m_SendMessage.text = "Now Sending";
+        StartCoroutine(GetDataWithHeader());
     }
-
-    private IEnumerator GetDataWithHeader(string URL,string email,string password)
+    
+    private IEnumerator GetDataWithHeader()
     {
-        url = URL + "/head/";
-        string headerAuth = "Basic ";
-        string cnvStr = base64.Encode(email + ":" +  password);
-        headerAuth += cnvStr;
-        UnityWebRequest request = UnityWebRequest.Get(url);
-        request.SetRequestHeader("authorization", headerAuth);
+        text.text = "start\n";
+        string url = envController.GetUrl();
+        url = url + "api/user/login";
+        text.text += url + "\n";
+
+        LoginInfo loginInfo = loginStateController.GetLoginInfo();
+        string loginInfoStr = JsonUtility.ToJson(loginInfo);
+        text.text += loginInfoStr + "\n";
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(loginInfoStr);
+
+        var request = new UnityWebRequest(url, "POST");
+        request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        text.text += "SetRequestHeader" + "\n";
         yield return request.SendWebRequest();
         if (request.result == UnityWebRequest.Result.Success)
         {
-            m_DataManager.SaveHeader(headerAuth);
+            text.text += "Success\n";
+            UserInfo userInfo = JsonUtility.FromJson<UserInfo>(request.downloadHandler.text);
+            text.text += userInfo.id;
+            m_DataManager.SaveHeader(userInfo.id);
             m_Transition.LoginToStudyWatch();
         }
         else
         {
+            text.text += request.error;
             m_SendMessage.text = request.error;
         }
     }

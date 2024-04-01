@@ -977,6 +977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2137574012556541982}
   - component: {fileID: 3545034120321352260}
+  - component: {fileID: 3910789353599494078}
   - component: {fileID: 6228581296283827431}
   - component: {fileID: 7015787082984426915}
   - component: {fileID: 1280928225905346356}
@@ -1015,8 +1016,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a50f48e66cdf1c4a8eb7a9adcbe8258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email: 
-  password: 
+  loginInfo:
+    email: 
+    password: 
+--- !u!114 &3910789353599494078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049617496302423051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d0a463ffb924327a7929397817d665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _envController: {fileID: 0}
+  _loginState: {fileID: 3545034120321352260}
 --- !u!114 &6228581296283827431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,10 +1045,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15717118dfeea434fae11bac175f87f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  envController: {fileID: 0}
+  loginStateController: {fileID: 3910789353599494078}
   m_SendMessage: {fileID: 3333367156587138745}
   m_Transition: {fileID: 0}
+  m_DataManager: {fileID: 0}
   m_ValidateLogin: {fileID: 1280928225905346356}
-  m_LoginState: {fileID: 3545034120321352260}
   m_UseKeyboard: {fileID: 7015787082984426915}
 --- !u!114 &7015787082984426915
 MonoBehaviour:
@@ -1046,6 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7feac644e97ddc441a51b9f7bf309ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loginStateController: {fileID: 3910789353599494078}
   inputEmailField: {fileID: 1193468289341100985}
   inputPasswordField: {fileID: 1791586943470176642}
   m_LoginState: {fileID: 3545034120321352260}
@@ -1224,7 +1243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: 4379153a-75a1-4cde-9f5c-cc5b32a5797d
+  instanceId: daeacf23-0a9b-4714-bbb4-c39a13aea436
   version: 1
 --- !u!114 &571964240392392582
 MonoBehaviour:
@@ -2121,7 +2140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: 76f84075-c40f-44d1-9735-3a0928e380e8
+  instanceId: bb7d9c1e-484d-4563-9595-c217373ff9f3
   version: 1
 --- !u!114 &8071655635152595205
 MonoBehaviour:
@@ -4373,7 +4392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5838e892-31a4-4f65-a415-dc108aefa14c
-  instanceId: 76f8e02f-ea49-4d01-a225-76e6391335d4
+  instanceId: d4194f7a-7f8a-4bee-b907-c669d0dddf3e
   version: 1
 --- !u!114 &1487801409945564632
 MonoBehaviour:

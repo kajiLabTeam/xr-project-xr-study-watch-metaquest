@@ -20,7 +20,7 @@ public class EnvState : MonoBehaviour
     [SerializeField] Env _env;
 
     public EnvInfo envInfo;
-    private EnvType envType = EnvType.test;
+    private EnvType envType = EnvType.production;
 
     private void Awake()
     {
