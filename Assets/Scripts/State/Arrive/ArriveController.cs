@@ -40,8 +40,8 @@ public class ArriveController : MonoBehaviour
 
     public Vector3 GetImageAspect(string id)
     {
-        float width = GetArriveInfo(id).width;
-        float height = GetArriveInfo(id).height;
+        float width = float.Parse(GetArriveInfo(id).width);
+        float height = float.Parse(GetArriveInfo(id).height);
         if (width <= 0 || height <= 0) return Vector3.zero;
         Vector3 vector3 = new Vector3(width,height,1);
         return vector3;

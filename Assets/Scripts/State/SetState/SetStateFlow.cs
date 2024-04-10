@@ -7,7 +7,7 @@ using UnityEngine;
 public class ResponseData
 {
     public List<ArriveInfo> arrivingObjects;
-    public List<LabObjectData> arroundObjects;
+    public List<LabObjectData> aroundObjects;
 }
 
 public class SetStateFlow : MonoBehaviour
@@ -19,6 +19,8 @@ public class SetStateFlow : MonoBehaviour
 
     [SerializeField] ScanFlow _scanFlow;
     [SerializeField] LabImageFlow _labImageFlow;
+
+    [SerializeField] TMPro.TMP_Text _Text;
 
     private IEnumerator labsCoroutine;
 
@@ -48,12 +50,15 @@ public class SetStateFlow : MonoBehaviour
         // ?K?v???v?f????????
         ResponseData newResponseData = null;
         // ???M???J?n
+        _Text.text += "request start\n";
         yield return StartCoroutine(labsCoroutine);
         newResponseData = (ResponseData)labsCoroutine.Current;
+        _Text.text += "request end\n";
+        _Text.text += newResponseData.aroundObjects.ToString() + "\n";
 
         // ???????????????X?????m
         bool isChangeLabData = false;
-        foreach (LabObjectData labObjectData in newResponseData.arroundObjects)
+        foreach (LabObjectData labObjectData in newResponseData.aroundObjects)
         {
             // LabState ???C???T?[?g
             isChangeLabData |= _labController.AddLabData(labObjectData);

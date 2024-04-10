@@ -5,9 +5,9 @@ using UnityEngine;
 public class ArriveInfo
 {
     public string id;
-    public float width;
-    public float height;
-    public int size;
+    public string width;
+    public string height;
+    public string size;
     public string viewUrl;
     public Texture texture;
 }
