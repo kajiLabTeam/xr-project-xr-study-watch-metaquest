@@ -15,7 +15,6 @@ public class HttpClient : MonoBehaviour
         ResponseData newResponseData = null;
         string url = _envController.GetUrl();
         url = url + "api/object/get";
-        _Text.text += url + "\n";
         string headerAuth = _dataManager.LoadHeader();
 
         UnityWebRequest request = UnityWebRequest.Get(url);

@@ -20,15 +20,15 @@ public class SelectController : MonoBehaviour
         return true;
     }
 
-    private bool SetDisableSelect()
+    public bool SetDisableSelect()
     {
         SelectInfo info = _selectState.selectInfos.FirstOrDefault(info => info.isSelected == true);
         
-        // info が取得できたか確認
+        // info ???????????????m?F
         if (info == null) return true;
         int index = _selectState.selectInfos.IndexOf(info);
 
-        // index が取得できたか確認
+        // index ???????????????m?F
         if (index == -1) return false;
         _selectState.selectInfos[index].isSelected = false;
         return true;
@@ -39,11 +39,11 @@ public class SelectController : MonoBehaviour
         if (!SetDisableSelect()) return false;
         SelectInfo info = _selectState.selectInfos.FirstOrDefault(info => info.id == id);
 
-        // info が取得できたか確認
+        // info ???????????????m?F
         if (info == null) return false;
         int index = _selectState.selectInfos.IndexOf(info);
 
-        // index が取得できたか確認
+        // index ???????????????m?F
         if (index == -1) return false;
         _selectState.selectInfos[index].isSelected = true;
         return true;
@@ -70,11 +70,11 @@ public class SelectController : MonoBehaviour
     {
         SelectInfo info = _selectState.selectInfos.FirstOrDefault(info => info.isShowed == true);
 
-        // info が取得できたか確認
+        // info ???????????????m?F
         if (info == null) return true;
         int index = _selectState.selectInfos.IndexOf(info);
 
-        // index が取得できたか確認
+        // index ???????????????m?F
         if (index == -1) return false;
         _selectState.selectInfos[index].isShowed = false;
         return true;
@@ -85,11 +85,11 @@ public class SelectController : MonoBehaviour
         if (!SetDisableShowed()) return false;
         SelectInfo info = _selectState.selectInfos.FirstOrDefault(info => info.id == id);
 
-        // info が取得できたか確認
+        // info ???????????????m?F
         if (info == null) return false;
         int index = _selectState.selectInfos.IndexOf(info);
 
-        // index が取得できたか確認
+        // index ???????????????m?F
         if (index == -1) return false;
         _selectState.selectInfos[index].isShowed = true;
         return true;

@@ -226,6 +226,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2021061503}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WakeUnselectObjectPannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnselectObjectPannel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283801840055046091, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7724724565247864197, guid: 51a275cd2af892e46a651fcea93305cd, type: 3}
       propertyPath: _labController
       value: 
@@ -2832,8 +2872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.25, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 0.75, y: 0}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405914599
 MonoBehaviour:
@@ -7526,6 +7566,7 @@ MonoBehaviour:
   _arriveController: {fileID: 1185170170}
   _scanFlow: {fileID: 308092041}
   _labImageFlow: {fileID: 463587152}
+  _unSelectObjectPannel: {fileID: 2021061503}
   _Text: {fileID: 405914599}
 --- !u!114 &1185170168
 MonoBehaviour:
@@ -11528,6 +11569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2021061502}
   - component: {fileID: 2021061501}
+  - component: {fileID: 2021061503}
   m_Layer: 0
   m_Name: SelectManager
   m_TagString: Untagged
@@ -11566,6 +11608,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2021061503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021061500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424ca40a5d28347ccae182f782cd3be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _changePannelManager: {fileID: 1127126114}
+  _selectController: {fileID: 1185170168}
 --- !u!1 &2022145163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3362233212944656032, guid: bfbed2c1e794a9e4faafaf1d5e785700, type: 3}
