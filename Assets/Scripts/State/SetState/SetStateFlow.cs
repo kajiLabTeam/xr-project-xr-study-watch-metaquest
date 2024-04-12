@@ -20,6 +20,8 @@ public class SetStateFlow : MonoBehaviour
     [SerializeField] ScanFlow _scanFlow;
     [SerializeField] LabImageFlow _labImageFlow;
 
+    [SerializeField] ChangePannelManager _changePannelManager;
+
     [SerializeField] TMPro.TMP_Text _Text;
 
     private IEnumerator labsCoroutine;
@@ -102,6 +104,7 @@ public class SetStateFlow : MonoBehaviour
         {
             // ???????\??
             yield return StartCoroutine(_labImageFlow.WakeLabImageFlow());
+            _changePannelManager.DisableSelectObject();
         }
         _Text.text += "wait";
         yield return new WaitForSeconds(10);

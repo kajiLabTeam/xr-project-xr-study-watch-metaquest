@@ -7526,6 +7526,7 @@ MonoBehaviour:
   _arriveController: {fileID: 1185170170}
   _scanFlow: {fileID: 308092041}
   _labImageFlow: {fileID: 463587152}
+  _changePannelManager: {fileID: 1127126114}
   _Text: {fileID: 405914599}
 --- !u!114 &1185170168
 MonoBehaviour:
