@@ -22,11 +22,11 @@ public class LabInfo
 public class LabObjectData
 {
     public string id;
-    public LabInfo lab;
+    public LabInfo laboratory;
     public UniversityInfo university;
 }
 
 public class LabState : MonoBehaviour
 {
-    public List<LabObjectData> arroundObjects = new();
+    public List<LabObjectData> aroundObjects = new();
 }

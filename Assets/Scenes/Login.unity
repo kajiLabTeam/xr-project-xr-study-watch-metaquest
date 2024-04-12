@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18018535, g: 0.22559482, b: 0.30677685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6304,7 +6304,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1543293036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40a67dfc4a5fd7d4bb18dba7a1b4f2f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6436ce62c5c024612996cad51e8ab464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1546136627
@@ -7437,6 +7437,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Login
       objectReference: {fileID: 0}
+    - target: {fileID: 3333367156587138745, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 590e4609f595317489b51722b47a35ef, type: 2}
+    - target: {fileID: 3333367156587138745, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1934681792646546309, guid: 590e4609f595317489b51722b47a35ef, type: 2}
+    - target: {fileID: 3333367156587138745, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3545034120321352260, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: email
       value: 
@@ -7449,6 +7461,14 @@ PrefabInstance:
       propertyPath: _envController
       value: 
       objectReference: {fileID: 1543293037}
+    - target: {fileID: 3910789353599494078, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: _envController
+      value: 
+      objectReference: {fileID: 1543293037}
+    - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: m_GlobalData
       value: 
@@ -7457,6 +7477,10 @@ PrefabInstance:
       propertyPath: m_Transition
       value: 
       objectReference: {fileID: 1693235740}
+    - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
+      propertyPath: envController
+      value: 
+      objectReference: {fileID: 1543293037}
     - target: {fileID: 6228581296283827431, guid: fab060bbc4b85bd49bed0f8f98a91f4c, type: 3}
       propertyPath: m_DataManager
       value: 

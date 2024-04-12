@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class LoginState : MonoBehaviour
+[System.Serializable]
+public class LoginInfo
 {
-    [SerializeField] EnvController _envController;
     public string email;
     public string password;
+}
 
-    private void Start()
-    {
-        email = _envController.GetEmail();
-        password = _envController.GetPassword();
-    }
+public class LoginState : MonoBehaviour
+{
+    public LoginInfo loginInfo = new();
 }

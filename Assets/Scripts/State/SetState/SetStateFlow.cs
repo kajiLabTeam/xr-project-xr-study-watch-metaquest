@@ -7,7 +7,7 @@ using UnityEngine;
 public class ResponseData
 {
     public List<ArriveInfo> arrivingObjects;
-    public List<LabObjectData> arroundObjects;
+    public List<LabObjectData> aroundObjects;
 }
 
 public class SetStateFlow : MonoBehaviour
@@ -19,6 +19,8 @@ public class SetStateFlow : MonoBehaviour
 
     [SerializeField] ScanFlow _scanFlow;
     [SerializeField] LabImageFlow _labImageFlow;
+
+    [SerializeField] TMPro.TMP_Text _Text;
 
     private IEnumerator labsCoroutine;
 
@@ -44,32 +46,36 @@ public class SetStateFlow : MonoBehaviour
 
     public IEnumerator WakeSetStateFlow()
     {
-        // サーバーと研究室情報の同期を行う
-        // 必要な要素の初期化
+        _Text.text += "start" + "\n";
+        // ?T?[?o?[?????????????????????s??
+        // ?K?v???v?f????????
         ResponseData newResponseData = null;
-        // 通信の開始
+        // ???M???J?n
+        _Text.text += "request" + "\n";
+        labsCoroutine = _httpClient.GetLabs();
         yield return StartCoroutine(labsCoroutine);
         newResponseData = (ResponseData)labsCoroutine.Current;
 
-        // 研究室情報の変更の検知
+        _Text.text += "request end" + "\n";
+        // ???????????????X?????m
         bool isChangeLabData = false;
-        foreach (LabObjectData labObjectData in newResponseData.arroundObjects)
+        foreach (LabObjectData labObjectData in newResponseData.aroundObjects)
         {
-            // LabState にインサート
+            // LabState ???C???T?[?g
             isChangeLabData |= _labController.AddLabData(labObjectData);
-            // SelectState にインサート
+            // SelectState ???C???T?[?g
             _selectController.AddSelectInfo(labObjectData.id);
         }
 
-        // 到達情報の変更の検知
+        // ???B?????????X?????m
         bool isChangeArriveData = false;
         foreach (ArriveInfo arriveInfo in newResponseData.arrivingObjects)
         {
-            // ArriveState にインサート
+            // ArriveState ???C???T?[?g
             isChangeArriveData |= _arriveController.AddArriveInfo(arriveInfo);
         }
 
-        // 選択情報の変更の検知
+        // ?I???????????X?????m
         bool isChangeSelectedId = false;
         string newSelectedId = _selectController.GetSelectedId();
         if (selectedId != newSelectedId)
@@ -78,25 +84,27 @@ public class SetStateFlow : MonoBehaviour
             isChangeSelectedId = true;
         }
 
-        // 変更を取得 && 副作用の発火
+        // ???X?????? && ?????p??????
         if (isChangeLabData)
         {
-            // ScanPannelをアクティブに
+            // ScanPannel???A?N?e?B?u??
             // yield return _scanFlow.WakeScanFlow();
         }
 
-        // 新しい到達情報があるか、選択された ID が変更された場合
+        // ?V???????B?????????????A?I???????? ID ?????X??????????
         bool isChangedArriveOrSelectData = isChangeArriveData || isChangeSelectedId;
 
-        // 画像が表示されておらず、選択された ID が null でない場合
+        // ???????\???????????????A?I???????? ID ?? null ??????????
         bool isImageToShow = !_selectController.GetIsShowed(selectedId) && selectedId != null;
 
-        // 条件がすべて満たされているかどうかをチェック
+        // ?????????????????????????????????????`?F?b?N
         if (isChangedArriveOrSelectData && isImageToShow)
         {
-            // 画像の表示
+            // ???????\??
             yield return StartCoroutine(_labImageFlow.WakeLabImageFlow());
         }
-        yield return new WaitForSeconds(20);
+        _Text.text += "wait";
+        yield return new WaitForSeconds(10);
+        _Text.text += "wait end" + "\n";
     }
 }
