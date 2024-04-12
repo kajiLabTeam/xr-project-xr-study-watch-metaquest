@@ -20,7 +20,7 @@ public class SetStateFlow : MonoBehaviour
     [SerializeField] ScanFlow _scanFlow;
     [SerializeField] LabImageFlow _labImageFlow;
 
-    [SerializeField] ChangePannelManager _changePannelManager;
+    [SerializeField] UnSelectObjectPannel _unSelectObjectPannel;
 
     [SerializeField] TMPro.TMP_Text _Text;
 
@@ -48,17 +48,14 @@ public class SetStateFlow : MonoBehaviour
 
     public IEnumerator WakeSetStateFlow()
     {
-        _Text.text += "start" + "\n";
         // ?T?[?o?[?????????????????????s??
         // ?K?v???v?f????????
         ResponseData newResponseData = null;
         // ???M???J?n
-        _Text.text += "request" + "\n";
         labsCoroutine = _httpClient.GetLabs();
         yield return StartCoroutine(labsCoroutine);
         newResponseData = (ResponseData)labsCoroutine.Current;
 
-        _Text.text += "request end" + "\n";
         // ???????????????X?????m
         bool isChangeLabData = false;
         foreach (LabObjectData labObjectData in newResponseData.aroundObjects)
@@ -104,7 +101,7 @@ public class SetStateFlow : MonoBehaviour
         {
             // ???????\??
             yield return StartCoroutine(_labImageFlow.WakeLabImageFlow());
-            _changePannelManager.DisableSelectObject();
+            _unSelectObjectPannel.WakeUnselectObjectPannel();
         }
         _Text.text += "wait";
         yield return new WaitForSeconds(10);
