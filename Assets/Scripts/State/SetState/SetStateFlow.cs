@@ -46,16 +46,17 @@ public class SetStateFlow : MonoBehaviour
 
     public IEnumerator WakeSetStateFlow()
     {
+        _Text.text += "start" + "\n";
         // ?T?[?o?[?????????????????????s??
         // ?K?v???v?f????????
         ResponseData newResponseData = null;
         // ???M???J?n
-        _Text.text += "request start\n";
+        _Text.text += "request" + "\n";
+        labsCoroutine = _httpClient.GetLabs();
         yield return StartCoroutine(labsCoroutine);
         newResponseData = (ResponseData)labsCoroutine.Current;
-        _Text.text += "request end\n";
-        _Text.text += newResponseData.aroundObjects.ToString() + "\n";
 
+        _Text.text += "request end" + "\n";
         // ???????????????X?????m
         bool isChangeLabData = false;
         foreach (LabObjectData labObjectData in newResponseData.aroundObjects)
@@ -102,6 +103,8 @@ public class SetStateFlow : MonoBehaviour
             // ???????\??
             yield return StartCoroutine(_labImageFlow.WakeLabImageFlow());
         }
-        yield return new WaitForSeconds(20);
+        _Text.text += "wait";
+        yield return new WaitForSeconds(10);
+        _Text.text += "wait end" + "\n";
     }
 }

@@ -6,6 +6,7 @@ public class LabImagePannel : MonoBehaviour
 
     private void Awake()
     {
+        EnableLabImage();
         DisableLabImage();
     }
 
